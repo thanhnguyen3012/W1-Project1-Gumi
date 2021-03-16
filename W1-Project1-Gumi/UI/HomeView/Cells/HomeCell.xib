@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCell" id="gTV-IL-0wX" customClass="HomeCell" customModule="W1_Project1_Gumi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="230"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="230"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okm-3c-gO6">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="230"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiV-C6-mj9">
+                                <rect key="frame" x="15" y="25" width="130" height="143.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="120"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lemon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yie-S6-zmd">
+                                <rect key="frame" x="50.5" y="174.5" width="59" height="21.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oiV-C6-mj9" firstAttribute="top" secondItem="okm-3c-gO6" secondAttribute="top" constant="25" id="g5x-f3-gkd"/>
+                            <constraint firstItem="oiV-C6-mj9" firstAttribute="centerX" secondItem="okm-3c-gO6" secondAttribute="centerX" id="ihi-4G-90F"/>
+                            <constraint firstItem="Yie-S6-zmd" firstAttribute="centerX" secondItem="okm-3c-gO6" secondAttribute="centerX" id="ocY-vc-IgW"/>
+                            <constraint firstItem="Yie-S6-zmd" firstAttribute="top" secondItem="oiV-C6-mj9" secondAttribute="bottom" constant="6" id="pYf-uk-XhW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="okm-3c-gO6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="a2K-r8-0cH"/>
+                <constraint firstAttribute="trailing" secondItem="okm-3c-gO6" secondAttribute="trailing" id="mci-Ac-Gkx"/>
+                <constraint firstItem="okm-3c-gO6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qF1-h8-4ou"/>
+                <constraint firstAttribute="bottom" secondItem="okm-3c-gO6" secondAttribute="bottom" id="vdJ-15-IPa"/>
+            </constraints>
+            <size key="customSize" width="281" height="340"/>
+            <connections>
+                <outlet property="iconLabel" destination="oiV-C6-mj9" id="vZY-mX-6GD"/>
+                <outlet property="nameLabel" destination="Yie-S6-zmd" id="84w-TW-lpe"/>
+            </connections>
+            <point key="canvasLocation" x="299.27536231884062" y="162.05357142857142"/>
+        </collectionViewCell>
+    </objects>
+</document>
