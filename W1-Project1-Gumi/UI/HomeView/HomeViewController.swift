@@ -50,13 +50,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         initCollectionView()
         
+        //Set clear color for the navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         
         for view in cartView {
-            view.roundCorners([.topLeft, .bottomLeft], radius: view.frame.height/2)
+            view.clipsToBounds = true
+            view.layer.cornerRadius = view.frame.height/2
+            view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner] 
         }
     }
     

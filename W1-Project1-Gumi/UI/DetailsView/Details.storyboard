@@ -170,12 +170,12 @@
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="CzK-PI-AFM" firstAttribute="width" secondItem="JL1-ho-vRi" secondAttribute="width" multiplier="0.5" id="1t8-RD-hNV"/>
-                            <constraint firstItem="dHO-Dm-A3B" firstAttribute="width" secondItem="OEp-Ni-v15" secondAttribute="width" id="9HY-kM-CWC"/>
+                            <constraint firstItem="dHO-Dm-A3B" firstAttribute="leading" secondItem="OEp-Ni-v15" secondAttribute="leading" id="TvW-w0-OKK"/>
                             <constraint firstItem="CzK-PI-AFM" firstAttribute="centerX" secondItem="OEp-Ni-v15" secondAttribute="centerX" id="URb-Bj-MpU"/>
                             <constraint firstItem="dHO-Dm-A3B" firstAttribute="height" secondItem="JL1-ho-vRi" secondAttribute="height" multiplier="0.5" id="Wpt-kB-RJx"/>
+                            <constraint firstItem="dHO-Dm-A3B" firstAttribute="trailing" secondItem="OEp-Ni-v15" secondAttribute="trailing" id="hN3-ef-xB4"/>
                             <constraint firstAttribute="bottom" secondItem="dHO-Dm-A3B" secondAttribute="bottom" id="iZl-aA-UTz"/>
                             <constraint firstItem="CzK-PI-AFM" firstAttribute="centerY" secondItem="JL1-ho-vRi" secondAttribute="centerY" multiplier="0.55" id="jxw-Mh-yNs"/>
-                            <constraint firstItem="dHO-Dm-A3B" firstAttribute="centerX" secondItem="JL1-ho-vRi" secondAttribute="centerX" id="nHV-YU-siZ"/>
                         </constraints>
                     </view>
                     <connections>

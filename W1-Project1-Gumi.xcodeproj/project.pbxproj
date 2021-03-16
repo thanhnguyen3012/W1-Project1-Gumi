@@ -15,7 +15,6 @@
 		841739BC2600525300463713 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841739BB2600525300463713 /* Home.storyboard */; };
 		841739C6260055D200463713 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841739C4260055D200463713 /* HomeCell.swift */; };
 		841739C7260055D200463713 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841739C5260055D200463713 /* HomeCell.xib */; };
-		841739CB26007D8500463713 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841739CA26007D8400463713 /* UIView.swift */; };
 		841739D22600878400463713 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841739D12600878400463713 /* Details.storyboard */; };
 		841739D52600879E00463713 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841739D42600879E00463713 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +30,6 @@
 		841739BB2600525300463713 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		841739C4260055D200463713 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		841739C5260055D200463713 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
-		841739CA26007D8400463713 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		841739D12600878400463713 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		841739D42600879E00463713 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,7 +100,6 @@
 		841739BF260054B800463713 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
-				841739CA26007D8400463713 /* UIView.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -218,7 +215,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841739CB26007D8500463713 /* UIView.swift in Sources */,
 				8417399F260051EB00463713 /* AppDelegate.swift in Sources */,
 				841739A1260051EB00463713 /* SceneDelegate.swift in Sources */,
 				841739C6260055D200463713 /* HomeCell.swift in Sources */,

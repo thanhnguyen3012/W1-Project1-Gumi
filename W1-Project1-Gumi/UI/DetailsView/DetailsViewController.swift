@@ -35,12 +35,16 @@ class DetailsViewController: UIViewController {
         
         view.backgroundColor = fruit.backgroundColor
         
-        detailsView.roundCorners([.topLeft,.topRight], radius: 30)
+        detailsView.clipsToBounds = true
+        detailsView.layer.cornerRadius = 50
+        detailsView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+
         
         iconLabel.text = fruit.icon
         
         nameLabel.text = fruit.name
         
+        //Create the stars rate for Quality
         switch fruit.rate {
         case 0:
             qualityLabel.text = "Low Quality"
@@ -67,6 +71,7 @@ class DetailsViewController: UIViewController {
         
         weighSlider.setValue(Float(fruit.weigh), animated: false)
         
+        //Draw the dashed line for Slider
         let shapeLayer = CAShapeLayer()
         shapeLayer.strokeColor = UIColor.lightGray.cgColor
         shapeLayer.lineWidth = 3
@@ -81,12 +86,14 @@ class DetailsViewController: UIViewController {
         
         priceLabel.text = "\(fruit.price)$"
         
+        //Setup visual states for Love button
         isLovedButton.isSelected = fruit.isLoved
         isLovedButton.setTitleColor(UIColor(red: 223/255, green: 76/255, blue: 87/255, alpha: 1), for: .normal)
         isLovedButton.setBackgroundImage(UIImage(systemName: "heart.circle", withConfiguration: .none), for: .normal)
         isLovedButton.setBackgroundImage(UIImage(systemName: "heart.circle.fill", withConfiguration: .none), for: .selected)
     }
     
+    //State of Love button change when you touch it
     @IBAction func loveTouched(_ sender: Any) {
         isLovedButton.isSelected = !isLovedButton.isSelected
     }
