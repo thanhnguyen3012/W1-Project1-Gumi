@@ -41,8 +41,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     private func initCollectionView() {
-        let nib = UINib(nibName: "HomeCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "HomeCell")
+        collectionView.register(HomeCell.nib, forCellWithReuseIdentifier: HomeCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -52,12 +51,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
-        
-        cell.iconLabel.text = listOfFruits[indexPath.row].icon
-        cell.nameLabel.text = listOfFruits[indexPath.row].name
-        cell.backgroundColor = listOfFruits[indexPath.row].backgroundColor
-        cell.layer.cornerRadius = 20
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifier, for: indexPath) as! HomeCell
+        cell.bindData(fruit: listOfFruits[indexPath.row])
         
         return cell
     }

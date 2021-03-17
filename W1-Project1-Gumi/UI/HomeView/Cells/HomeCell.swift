@@ -15,6 +15,21 @@ class HomeCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        layer.cornerRadius = 20
+    }
+    
+    func bindData(fruit: Fruit) {
+        iconLabel.text = fruit.icon
+        nameLabel.text = fruit.name
+        backgroundColor = fruit.backgroundColor
+    }
+    
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
+    static var nib : UINib {
+        return UINib(nibName: identifier, bundle: nil)
     }
 
 }
