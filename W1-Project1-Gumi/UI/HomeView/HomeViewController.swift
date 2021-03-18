@@ -8,14 +8,14 @@
 import UIKit
 
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class HomeViewController: UIViewController {
     
     //Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var cartView: [UIView]!
     
     //Data
-    var listOfFruits = [
+    let listOfFruits = [
                         Fruit(icon: "🍋", name: "Lemon", rate: 3, weigh: 400, origin: "🇺🇸 from USA", price: 1, isLoved: false, color: UIColor(red: 255/255, green: 211/255, blue: 52/255, alpha: 1)),
                         Fruit(icon: "🍊", name: "Orange", rate: 2, weigh: 800, origin: "🇨🇦 from Canada", price: 2, isLoved: true, color: UIColor(red: 212/255, green: 175/255, blue: 64/255, alpha: 1)),
                         Fruit(icon: "🍓", name: "Strawberry", rate: 3, weigh: 750, origin: "🇪🇸 from Spain", price: 10, isLoved: false, color: UIColor(red: 238/255, green: 68/255, blue: 86/255, alpha: 1)),
@@ -26,7 +26,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         
         initCollectionView()
-        
+        configUI()
+    }
+    
+    func configUI() {
         //Set clear color for the navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -36,7 +39,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         for view in cartView {
             view.clipsToBounds = true
             view.layer.cornerRadius = view.frame.height/2
-            view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner] 
+            view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
         }
     }
     
@@ -45,7 +48,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView.dataSource = self
         collectionView.delegate = self
     }
+}
 
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listOfFruits.count
     }
@@ -60,10 +67,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Details", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-
-        vc.fruit = listOfFruits[indexPath.row]
+        vc.prepareData(fruit: listOfFruits[indexPath.row])
 
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-

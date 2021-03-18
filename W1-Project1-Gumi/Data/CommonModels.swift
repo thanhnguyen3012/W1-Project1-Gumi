@@ -27,6 +27,4 @@ struct Fruit {
         self.isLoved = isLoved
         self.backgroundColor = color
     }
-    
-    init(){}
 }

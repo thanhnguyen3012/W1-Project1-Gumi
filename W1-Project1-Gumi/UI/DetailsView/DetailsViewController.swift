@@ -25,21 +25,43 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var dashedLineView: UIView!
     
     //Data
-    var fruit = Fruit()
+    private var fruit = Fruit(icon: "", name: "", rate: 0, weigh: 0, origin: "", price: 0, isLoved: false, color: .white)
 
     //Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "Details"
-        
+        confgiUI()
+        reloadData()       
+    }
+    
+    func confgiUI() {
         view.backgroundColor = fruit.backgroundColor
         
         detailsView.clipsToBounds = true
         detailsView.layer.cornerRadius = 50
         detailsView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-
         
+        //Draw the dashed line for Slider
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.strokeColor = UIColor.lightGray.cgColor
+        shapeLayer.lineWidth = 3
+        shapeLayer.lineCap = .round
+        shapeLayer.lineDashPattern = [1, 20] // 1 is the length of dash, 20 is length of the gap.
+        let path = CGMutablePath()
+        path.addLines(between: [CGPoint(x: dashedLineView.bounds.minX, y: dashedLineView.bounds.minY), CGPoint(x: dashedLineView.bounds.maxX, y: dashedLineView.bounds.minY)])
+        shapeLayer.path = path
+        dashedLineView.layer.addSublayer(shapeLayer)
+        
+        //Setup visual states for Love button
+        isLovedButton.isSelected = fruit.isLoved
+        isLovedButton.setTitleColor(UIColor(red: 223/255, green: 76/255, blue: 87/255, alpha: 1), for: .normal)
+        isLovedButton.setBackgroundImage(UIImage(systemName: "heart.circle", withConfiguration: .none), for: .normal)
+        isLovedButton.setBackgroundImage(UIImage(systemName: "heart.circle.fill", withConfiguration: .none), for: .selected)
+    }
+    
+    func reloadData() {
         iconLabel.text = fruit.icon
         
         nameLabel.text = fruit.name
@@ -71,26 +93,13 @@ class DetailsViewController: UIViewController {
         
         weighSlider.setValue(Float(fruit.weigh), animated: false)
         
-        //Draw the dashed line for Slider
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.strokeColor = UIColor.lightGray.cgColor
-        shapeLayer.lineWidth = 3
-        shapeLayer.lineCap = .round
-        shapeLayer.lineDashPattern = [1, 20] // 1 is the length of dash, 20 is length of the gap.
-        let path = CGMutablePath()
-        path.addLines(between: [CGPoint(x: dashedLineView.bounds.minX, y: dashedLineView.bounds.minY), CGPoint(x: dashedLineView.bounds.maxX, y: dashedLineView.bounds.minY)])
-        shapeLayer.path = path
-        dashedLineView.layer.addSublayer(shapeLayer)
-        
         originLabel.text = fruit.origin
         
         priceLabel.text = "\(fruit.price)$"
-        
-        //Setup visual states for Love button
-        isLovedButton.isSelected = fruit.isLoved
-        isLovedButton.setTitleColor(UIColor(red: 223/255, green: 76/255, blue: 87/255, alpha: 1), for: .normal)
-        isLovedButton.setBackgroundImage(UIImage(systemName: "heart.circle", withConfiguration: .none), for: .normal)
-        isLovedButton.setBackgroundImage(UIImage(systemName: "heart.circle.fill", withConfiguration: .none), for: .selected)
+    }
+    
+    func prepareData(fruit: Fruit) {
+        self.fruit = fruit
     }
     
     //State of Love button change when you touch it
