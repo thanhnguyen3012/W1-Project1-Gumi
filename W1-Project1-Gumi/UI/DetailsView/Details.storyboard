@@ -187,9 +187,9 @@
                         <outlet property="originLabel" destination="QJ1-eA-zhc" id="Jb3-je-BPL"/>
                         <outlet property="priceLabel" destination="Tzz-hb-LQp" id="k9u-Al-fG0"/>
                         <outlet property="qualityLabel" destination="8lp-1w-4jE" id="80d-FE-n3D"/>
-                        <outlet property="star1ImageView" destination="ijT-9r-i0v" id="dRh-9R-8v5"/>
-                        <outlet property="star2ImageView" destination="ypY-os-bEd" id="VnL-0U-bpz"/>
-                        <outlet property="star3ImageView" destination="vzc-7t-5Eg" id="deC-fC-uic"/>
+                        <outlet property="starOneImageView" destination="ijT-9r-i0v" id="Wlb-tv-OZ0"/>
+                        <outlet property="starThreeImageView" destination="vzc-7t-5Eg" id="uUS-O4-of7"/>
+                        <outlet property="starTwoImageView" destination="ypY-os-bEd" id="B8G-BB-CNv"/>
                         <outlet property="weighLabel" destination="2E1-J4-pz8" id="x01-bh-wWI"/>
                         <outlet property="weighSlider" destination="75u-Lg-7cU" id="yfn-UT-tmw"/>
                     </connections>

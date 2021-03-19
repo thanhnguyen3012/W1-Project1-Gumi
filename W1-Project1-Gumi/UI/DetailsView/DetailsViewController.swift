@@ -19,9 +19,9 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var originLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var isLovedButton: UIButton!
-    @IBOutlet weak var star1ImageView: UIImageView!
-    @IBOutlet weak var star2ImageView: UIImageView!
-    @IBOutlet weak var star3ImageView: UIImageView!
+    @IBOutlet weak var starOneImageView: UIImageView!
+    @IBOutlet weak var starTwoImageView: UIImageView!
+    @IBOutlet weak var starThreeImageView: UIImageView!
     @IBOutlet weak var dashedLineView: UIView!
     
     //Data
@@ -70,23 +70,23 @@ class DetailsViewController: UIViewController {
         switch fruit.rate {
         case 0:
             qualityLabel.text = "Low Quality"
-            star1ImageView.image = UIImage(systemName: "star", withConfiguration: .none)
-            star2ImageView.image = UIImage(systemName: "star", withConfiguration: .none)
-            star3ImageView.image = UIImage(systemName: "star", withConfiguration: .none)
+            starOneImageView.image = UIImage(systemName: "star", withConfiguration: .none)
+            starTwoImageView.image = UIImage(systemName: "star", withConfiguration: .none)
+            starThreeImageView.image = UIImage(systemName: "star", withConfiguration: .none)
             qualityLabel.text = "Standard Quality"
-            star1ImageView.image = UIImage(systemName: "star.fill", withConfiguration: .none)
-            star2ImageView.image = UIImage(systemName: "star", withConfiguration: .none)
-            star3ImageView.image = UIImage(systemName: "star", withConfiguration: .none)
+            starOneImageView.image = UIImage(systemName: "star.fill", withConfiguration: .none)
+            starTwoImageView.image = UIImage(systemName: "star", withConfiguration: .none)
+            starThreeImageView.image = UIImage(systemName: "star", withConfiguration: .none)
         case 2:
             qualityLabel.text = "High Quality"
-            star1ImageView.image = UIImage(systemName: "star.fill", withConfiguration: .none)
-            star2ImageView.image = UIImage(systemName: "star.fill", withConfiguration: .none)
-            star3ImageView.image = UIImage(systemName: "star", withConfiguration: .none)
+            starOneImageView.image = UIImage(systemName: "star.fill", withConfiguration: .none)
+            starTwoImageView.image = UIImage(systemName: "star.fill", withConfiguration: .none)
+            starThreeImageView.image = UIImage(systemName: "star", withConfiguration: .none)
         default:
             qualityLabel.text = "Best Quality"
-            star1ImageView.image = UIImage(systemName: "star.fill", withConfiguration: .none)
-            star2ImageView.image = UIImage(systemName: "star.fill", withConfiguration: .none)
-            star3ImageView.image = UIImage(systemName: "star.fill", withConfiguration: .none)
+            starOneImageView.image = UIImage(systemName: "star.fill", withConfiguration: .none)
+            starTwoImageView.image = UIImage(systemName: "star.fill", withConfiguration: .none)
+            starThreeImageView.image = UIImage(systemName: "star.fill", withConfiguration: .none)
         }
         
         weighLabel.text = "\(fruit.weigh)g"
